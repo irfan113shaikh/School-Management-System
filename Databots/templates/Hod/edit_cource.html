@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block  content %}
+<div class="row">
+    <div class="col-sm-12">
+       <div class="card">
+          <div class="card-body">
+             <form method="POST" action="{% url 'update_cource' %}" >
+                 {% csrf_token %}
+                <div class="row">
+                   {% comment %} <div class="col-12"> {% endcomment %}
+                      <h5 class="form-title"><span>Edit Cource</span></h5>
+                   </div>
+
+
+
+                  {% include 'includes/messages.html' %}
+
+
+
+                   
+                   <div class="col-12 col-sm-6">
+                   {% comment %} <div class="col-sm-11"> {% endcomment %}
+                      <div class="form-group">
+                         <label>Cource Name</label>
+                         <input type="text" class="form-control" name="name"  value="{{cource.name}}" required >
+                         <input type="text" class="form-control" name="cource_id" value="{{cource.id}}" hidden >
+                      </div>
+                   </div>
+                   
+
+
+                   <div class="col-12">
+                    {% comment %} <div class="col-sm-11"> {% endcomment %}
+                      <button type="submit" class="btn btn-primary">Update Cource</button>
+                   </div>
+                {% comment %} </div> {% endcomment %}
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock  %}
